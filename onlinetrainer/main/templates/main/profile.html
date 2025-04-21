@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="profile">
+
+    <div class="profile-block">
+        <p><br></p>
+        <p><br></p>
+        <p>Вхід користувача</p>
+
+        <div class="profile-actions">
+            <a href="{% url 'registration_form' %}" class="btn">Зареєструватися</a>
+
+            <a href="{% url 'login' %}" class="btn">Увійти</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

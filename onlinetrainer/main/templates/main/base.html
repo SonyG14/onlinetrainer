@@ -1,0 +1,83 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Онлайн Тренер{% endblock %}</title>
+</head>
+<body>
+
+    <!-- Хедер -->
+    <header id="main-header">
+        <nav>
+            <label id="logo">Онлайн <br>тренер</label>
+            <a id="ind" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Головна</a>
+            <a id="ab" class="{% if request.resolver_match.url_name == 'about-us' %}active{% endif %}" href="{% url 'about-us' %}">Про нас</a>
+            <a id="cont" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}" href="{% url 'contacts' %}">Контакти</a>
+
+            <div class="user-menu-container">
+            <a href="{% url 'profile' %}"><img id="user-image" src="{% static 'images/user.png' %}" alt="User Image"></a>
+                <div class="user-dropdown">
+        <a href="{% url 'register' %}" class="dropdown-button">Зареєструватись</a>
+        <a href="{% url 'profile' %}" class="dropdown-button">Мій профіль</a>
+    </div>
+</div>
+        </nav>
+    </header>
+
+    <!-- Основний контент -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2025 Онлайн Тренер</p>
+    </footer>
+
+</body>
+</html>
+
+
+<style>
+    .user-menu-container {
+    position: relative;
+    display: inline-block;
+
+}
+
+.user-dropdown {
+    position: absolute;
+    top: -100%;
+   align-items: flex-end;
+    background-color: #21212d;
+    border-top: none;
+    border-radius: 4px;
+    z-index: 10;
+    display: none;
+    min-width: 120px;
+    padding: 5px 0;
+
+}
+
+.user-menu-container:hover .user-dropdown {
+    display: block;
+}
+
+.dropdown-button {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+}
+
+
+</style>

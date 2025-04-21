@@ -1,0 +1,59 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="register">
+    <div class="register-block">
+        <p><br></p>
+        <p><br></p>
+        <p>Реєстрація користувача</p>
+
+        <form id="register-form" method="post">
+            {% csrf_token %}
+            <label for="username">Ім'я користувача:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="email">Електронна пошта:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit" class="btn">Зареєструватися</button>
+        </form>
+        <div id="message"></div>
+    </div>
+</div>
+
+
+<script>
+
+    document.getElementById('register-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const formData = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+        };
+
+        const response = await fetch('/api/register/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            document.getElementById('message').innerText = 'Реєстрація успішна!';
+        } else {
+            document.getElementById('message').innerText = data.error || 'Помилка реєстрації.';
+        }
+    });
+</script>
+{% endblock %}

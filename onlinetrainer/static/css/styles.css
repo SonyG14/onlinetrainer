@@ -1,0 +1,392 @@
+/* Вся сторінка – Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Внутрішні блоки – Flexbox */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    height: 150px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Футер */
+footer {
+    width: 100%;
+    background: #000000;
+    color: white;
+    text-align: left;
+    height: 10px;
+    padding: 25px 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    font-size: 10px;
+    font-family: 'Play', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1; /* Дозволяє main розширюватися і займати доступний простір, відштовхуючи футер вниз */
+}
+
+.btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #a04de6;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        font-family: 'Play', sans-serif;
+    }
+
+.btn:hover {
+         background: linear-gradient(60deg, #f11c73, #7531dc);
+    }
+
+#user-image {
+    position: fixed;
+    top: 8px;
+    bottom: 10px;
+    right: 50px;
+    width: 24px;
+    height: 24px;
+}
+
+#ind, #ab, #cont {
+    text-decoration: none; /* Відключає підкреслення за замовчуванням */
+    color: #ffffff; /* Задає колір тексту посилання */
+    font-size: 16px; /* Розмір шрифту */
+    padding: 10px; /* Відступи навколо посилання */
+    border-radius: 5px; /* Округлення країв */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Анімація для змін кольору */
+}
+
+#ind:hover, #ab:hover, #cont:hover {
+    background: linear-gradient(60deg, #f11c73, #7531dc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+#ind.active,
+#ab.active,
+#cont.active {
+    color: #a04de6!important;
+    border-radius: 5px;
+     transition: color 0.5s ease;
+}
+
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+.about{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background: #21212d;
+}
+.contacts{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background: #21212d;
+}
+.profile{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #21212d;
+}
+
+.login{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #21212d;
+}
+
+#woman {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    display: flex;
+    justify-content: center; /* Центрує текст горизонтально */
+    align-items: center;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 53px;
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+
+}
+
+.content {
+    padding: 20px;
+    background: #21212d;
+    text-align: right;
+    height: 250px;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+.content2 {
+    padding: 20px;
+    background: #000000;
+    height: 600px;
+    color: white;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+}
+
+/* Для браузерів на основі WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 0px; /* Ширина скролбара */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Фон треку скролбара */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Фон повзунка скролбара */
+}
+
+#logo {
+    color: white;
+    position: fixed;
+    text-align: left;
+    left: 50px;
+    font-size: 15px;
+    top: 2px;
+
+}
+
+.d-block {
+    width: 700px;  /* Фіксована ширина відео */
+    height: 450px; /* Фіксована висота відео */
+    object-fit: cover; /* Відео буде покривати весь контейнер, можливо, з обрізанням частини відео */
+}
+
+#trainer{
+    width: 90px;
+    height: 90px;
+    float: left;
+    margin-right: 60px;
+    margin-top: 40px;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+    .profile-block {
+        margin-top: 10px;
+        text-align: center;
+        background-color: #000000;
+        padding: 40px;
+        border-radius: 5px;
+        width: 350px;
+        height: 300px;
+    }
+
+    .profile-block p {
+        margin-top: -15px;
+        font-size: 24px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-family: 'Play', sans-serif;
+        color: #ffffff;
+    }
+
+    .profile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ab-us, .cont {
+        font-size: 32px;
+        font-family: 'Play', sans-serif;
+        color: #ffffff;
+    }
+
+/* Всі елементи, що містяться в .login, організовані через Flexbox */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #21212d; /* Темний фон */
+}
+
+/* Визначаємо стиль для самого блоку форми */
+.log {
+    padding: 40px;
+    background-color: #000000; /* Темний фон для блоку */
+    border-radius: 8px; /* Округлені кути */
+    text-align: center;
+    width: 100%;
+    max-width: 350px; /* Максимальна ширина блоку */
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #ffffff; /* Білий текст */
+    font-family: 'Play', sans-serif;
+}
+
+/* Стилі для лейблів та полів вводу */
+label {
+    display: block;
+    font-size: 14px;
+    color: #ffffff; /* Білий текст для лейблів */
+    margin-bottom: 8px;
+    text-align: left;
+    font-family: 'Play', sans-serif;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #6c5ce7; /* Колір для поля вводу при фокусі */
+    outline: none;
+
+}
+
+/* Стиль для кнопки "Увійти" */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #a04de6;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Play', sans-serif;
+}
+
+button:hover {
+    background: linear-gradient(60deg, #f11c73, #7531dc);
+}
+
+/* Повідомлення помилок */
+#message {
+    margin-top: 20px;
+    color: #6617bb; /* Колір помилки */
+    font-size: 14px;
+}
+
+.register {
+    width: 100%;
+    overflow: hidden;
+    background: #21212d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.register-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 5px;
+    width: 350px;
+    height: 430px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.register-block p {
+    margin-top: -15px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Play', sans-serif;
+    color: #ffffff;
+}
+
+.prev, .next {
+    padding: 8px 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #555;!important;
+    font-size: 0.8em;
+    width: 60px;
+}
+
+
+
+
