@@ -1,13 +1,11 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-
 {% block content %}
 <div class="login">
     <div class="log">
         <h2>Вхід</h2>
-        <form id="login-form" method="post">
-            {% csrf_token %}
+        <form id="login-form">
             <label for="username">Ім'я користувача:</label><br>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -21,34 +19,37 @@
 </div>
 
 <script>
-    document.getElementById('login-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
+document.getElementById('login-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-        const formData = {
-            username: document.getElementById('username').value,
-            password: document.getElementById('password').value
-        };
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-        const response = await fetch('/api/token/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-            body: JSON.stringify(formData)
-        });
-
-        const data = await response.json();
-
-        if (response.ok) {
-            document.getElementById('message').innerText = 'Вхід успішний!';
-            localStorage.setItem('access_token', data.access);  // зберігаємо токен
-            localStorage.setItem('refresh_token', data.refresh);
-            localStorage.setItem('username', formData.username); // ← зберігаємо username
-            window.location.href = '';
-        } else {
-            document.getElementById('message').innerText = 'Невірний логін або пароль.';
-        }
+    const response = await fetch('/api/token/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password })
     });
+
+    const data = await response.json();
+
+    if (response.ok) {
+        localStorage.setItem('access_token', data.access);
+        localStorage.setItem('refresh_token', data.refresh);
+        localStorage.setItem('username', username);
+
+        if (data.email) {
+        localStorage.setItem('email', data.email);
+        }
+
+        // Перехід на головну або іншу сторінку після входу
+        window.location.href = '/';
+    } else {
+        document.getElementById('message').innerText =
+            data.detail || 'Невірний логін або пароль.';
+    }
+});
 </script>
 {% endblock %}

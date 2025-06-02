@@ -24,8 +24,8 @@ footer {
     background: #000000;
     color: white;
     text-align: left;
-    height: 10px;
-    padding: 25px 0;
+    height: 5%;
+    padding: 20px 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -46,14 +46,14 @@ main {
 
 .btn {
         display: inline-block;
-        padding: 12px 24px;
+        padding: 10px 24px;
         background-color: #a04de6;
         color: white;
         text-decoration: none;
         border-radius: 5px;
         border: none;
         transition: background-color 0.3s ease;
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'Play', sans-serif;
     }
 
@@ -68,32 +68,37 @@ main {
     right: 50px;
     width: 24px;
     height: 24px;
+    margin-right: 60px;
+    cursor: pointer;
 }
 
-#ind, #ab, #cont {
+#ind, #ab, #cont, #down, .apk, #exer, .suc_a, #user-header{
     text-decoration: none; /* Відключає підкреслення за замовчуванням */
     color: #ffffff; /* Задає колір тексту посилання */
     font-size: 16px; /* Розмір шрифту */
     padding: 10px; /* Відступи навколо посилання */
     border-radius: 5px; /* Округлення країв */
     transition: background-color 0.3s ease, color 0.3s ease; /* Анімація для змін кольору */
+    font-family: 'Play', sans-serif;
 }
 
-#ind:hover, #ab:hover, #cont:hover {
+#ind:hover, #ab:hover, #cont:hover, #down:hover, .apk:hover, #exer:hover, .suc_a:hover{
     background: linear-gradient(60deg, #f11c73, #7531dc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-
 #ind.active,
 #ab.active,
-#cont.active {
+#cont.active,
+.apk.active,
+#down.active,
+.suc_a.active,
+#exer.active{
     color: #a04de6!important;
     border-radius: 5px;
      transition: color 0.5s ease;
 }
-
 
 .hero {
     position: relative;
@@ -103,11 +108,17 @@ main {
 }
 .about{
     width: 100%;
-    height: 800px;
+    height: 500px;
     overflow: hidden;
     background: #21212d;
 }
 .contacts{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background: #21212d;
+}
+.downloads{
     width: 100%;
     height: 800px;
     overflow: hidden;
@@ -127,6 +138,19 @@ main {
     background: #21212d;
 }
 
+.exercises{
+    width: 100%;
+    height: 1210px;
+    overflow: hidden;
+    background: #21212d;
+}
+
+.exit{
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    background: #21212d;
+}
 #woman {
     width: 100%;
     height: 450px;
@@ -171,14 +195,32 @@ header {
 
 }
 
-.content {
+.content{
     padding: 20px;
     background: #21212d;
-    text-align: right;
-    height: 250px;
+    text-align: left;
+
     font-family: 'Play', sans-serif;
     color: white;
+
 }
+
+.content h2{
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    color: #ffffff; /* Білий текст */
+    font-family: 'Play', sans-serif;
+}
+
+.content p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: #ffffff; /* Білий текст */
+    font-family: 'Play', sans-serif;
+}
+
 .content2 {
     padding: 20px;
     background: #000000;
@@ -201,28 +243,20 @@ header {
   background: transparent; /* Фон повзунка скролбара */
 }
 
-#logo {
-    color: white;
-    position: fixed;
-    text-align: left;
-    left: 50px;
-    font-size: 15px;
-    top: 2px;
 
-}
 
 .d-block {
-    width: 700px;  /* Фіксована ширина відео */
-    height: 450px; /* Фіксована висота відео */
-    object-fit: cover; /* Відео буде покривати весь контейнер, можливо, з обрізанням частини відео */
+  width: 620px;
+  height: 320px;
+  object-fit: cover;
 }
 
-#trainer{
-    width: 90px;
-    height: 90px;
-    float: left;
-    margin-right: 60px;
+
+.trainer{
+    float: right;
     margin-top: 40px;
+    /*margin-right: 50px;*/
+
 }
 
 .profile {
@@ -234,19 +268,24 @@ header {
 }
 
     .profile-block {
-        margin-top: 10px;
         text-align: center;
         background-color: #000000;
-        padding: 40px;
         border-radius: 5px;
-        width: 350px;
-        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        width: 340px;
+        height: 210px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 
     .profile-block p {
         margin-top: -15px;
-        font-size: 24px;
-        margin-bottom: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
         font-weight: bold;
         font-family: 'Play', sans-serif;
         color: #ffffff;
@@ -258,10 +297,11 @@ header {
         gap: 20px;
     }
 
-    .ab-us, .cont {
-        font-size: 32px;
+    .ab-us, .cont, .down {
+        font-size: 24px;
         font-family: 'Play', sans-serif;
         color: #ffffff;
+        text-align: center;
     }
 
 /* Всі елементи, що містяться в .login, організовані через Flexbox */
@@ -269,25 +309,32 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 92vh;
     background: #21212d; /* Темний фон */
 }
 
 /* Визначаємо стиль для самого блоку форми */
 .log {
-    padding: 40px;
     background-color: #000000; /* Темний фон для блоку */
-    border-radius: 8px; /* Округлені кути */
+    border-radius: 5px; /* Округлені кути */
     text-align: center;
-    width: 100%;
     max-width: 350px; /* Максимальна ширина блоку */
     box-sizing: border-box;
-    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    width: 30%;
+    height: 330px;
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     color: #ffffff; /* Білий текст */
     font-family: 'Play', sans-serif;
 }
@@ -295,20 +342,20 @@ h2 {
 /* Стилі для лейблів та полів вводу */
 label {
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     color: #ffffff; /* Білий текст для лейблів */
-    margin-bottom: 8px;
+    margin-bottom: 1px;
     text-align: left;
     font-family: 'Play', sans-serif;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0 8px 0;
+    padding: 6px;
+    margin: 6px 0 6px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
     box-sizing: border-box;
 }
 
@@ -318,21 +365,20 @@ input:focus {
 
 }
 
-/* Стиль для кнопки "Увійти" */
 button {
     width: 100%;
-    padding: 12px;
+    padding: 3px;
     background-color: #a04de6;
     border: none;
     color: white;
-    font-size: 16px;
-    border-radius: 4px;
+    font-size: 12px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Play', sans-serif;
 }
 
-button:hover {
+.button:hover {
     background: linear-gradient(60deg, #f11c73, #7531dc);
 }
 
@@ -340,11 +386,12 @@ button:hover {
 #message {
     margin-top: 20px;
     color: #6617bb; /* Колір помилки */
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .register {
     width: 100%;
+    height: 520px;
     overflow: hidden;
     background: #21212d;
     display: flex;
@@ -359,34 +406,307 @@ button:hover {
     justify-content: center;
     align-items: center;
     background-color: #000000;
-    padding: 30px;
+    padding: 60px;
     border-radius: 5px;
-    width: 350px;
-    height: 430px;
+    width: 250px;
+    height: 290px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
 .register-block p {
-    margin-top: -15px;
-    font-size: 24px;
-    margin-bottom: 20px;
+    margin-top: -10px;
+    font-size: 20px;
+    margin-bottom: 25px;
     font-weight: bold;
     font-family: 'Play', sans-serif;
     color: #ffffff;
 }
 
+.carousel {
+  position: relative; /* Для позиціонування стрілок відносно контейнера */
+
+}
+
 .prev, .next {
-    padding: 8px 12px;
-    margin: 5px;
-    border: 1px solid #ccc;
+  position: absolute;
+  top: 35%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  cursor: pointer;
+  z-index: 10;
+  transition: border-color 0.3s ease;
+}
+
+.prev {
+  left: 120px;
+  border-width: 15px 20px 15px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.next {
+  right: 120px;
+  border-width: 15px 0 15px 20px;
+  border-color: transparent transparent transparent white;
+}
+
+.prev:hover, .prev:active {
+  border-color: transparent #a04de6 transparent transparent; /* Фіолетовий зліва */
+}
+
+.next:hover, .next:active {
+  border-color: transparent transparent transparent #a04de6; /* Фіолетовий справа */
+}
+
+#logo {
+  width: 63px;
+  height: auto;
+    margin-top: 2px;
+    position: fixed;
+    left: 90px;
+    font-size: 15px;
+    top: 2px;
+}
+
+.user-menu-container {
+    position: fixed; /* Залишаємо fixed, якщо картинка має бути фіксованою */
+    top: 35px;
+    right: 140px;
+    display: inline-block; /* Щоб контейнер займав лише необхідну ширину */
+}
+
+.user-dropdown {
+    position: absolute; /* Позиціонуємо абсолютно відносно .user-menu-container */
+    top: calc(100% + 5px); /* Розміщуємо на 5px нижче нижнього краю картинки */
+    left: 0; /* Вирівнюємо по лівому краю картинки */
+    background-color: #21212d;
     border-radius: 4px;
-    background-color: #f0f0f0;
-    color: #555;!important;
-    font-size: 0.8em;
-    width: 60px;
+    display: none; /* Спочатку меню приховане */
+    min-width: 130px;
+    padding: 5px 0;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.6); /* Тінь для краси */
+    z-index: 10;
+}
+
+.user-menu-container:hover .user-dropdown {
+    display: block; /* Меню показується при наведенні на контейнер */
+}
+
+.user-dropdown.show {
+    display: block; /* Якщо є клас .show, то меню видно */
+}
+
+.dropdown-button {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+    font-family: 'Play', sans-serif;
+}
+
+.dropdown-button:hover {
+    background: linear-gradient(60deg, #f11c73, #7531dc);
+    color: white;
+}
+
+.head-text, .down{
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    font-family:  'Play', sans-serif;
+    margin-top: 30px;
+}
+
+.exit-block{
+        text-align: center;
+        background-color: #000000;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px;
+        width: 260px;
+        height: 120px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+}
+
+.exit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.exit-block p {
+    margin-top: -10px;
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Play', sans-serif;
+    color: #ffffff;
+}
+
+.content3{
+    padding: 10px;
+    background: #000000;
+    text-align: left;
+    height: 320px;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+.content4{
+    padding: 10px;
+    background: #21212d;
+    text-align: left;
+    height: 320px;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+.content5{
+    padding: 10px;
+    background: #000000;
+    text-align: left;
+    height: 320px;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+
+.exercises h2{
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    color: #ffffff; /* Білий текст */
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+.exercises h3{
+    font-size: 22px;
+    margin-top: 10px;
+    color: #ffffff; /* Білий текст */
+    font-family: 'Play', sans-serif;
+}
+.content3 img{
+    width: 380px;
+    height: 220px;
+    margin-top: 20px;
+    /*right: 90px;*/
+    position: absolute;
+    right: 7%;
+}
+.content5 img{
+    width: 380px;
+    height: 220px;
+    margin-top: 20px;
+    /*right: 90px;*/
+    position: absolute;
+    right: 7%;
+}
+.content4 img{
+    width: 380px;
+    height: 220px;
+    margin-top: 20px;
+    /*right: 90px;*/
+    position: absolute;
+    right: 7%;
+}
+.suc{
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    background: #21212d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suc-block{
+    padding: 20px;
+    background: #21212d;
+    text-align: left;
+    height: 200px;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+.suc-block p{
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    color: #ffffff; /* Білий текст */
+    font-family: 'Play', sans-serif;
+}
+
+.exerc {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #21212d;
+    color: white;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;  /* по горизонталі */
+}
+.exerc video{
+    width: 500px;
+    height: 300px;
+}
+
+.apk {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    font-family: 'Play', sans-serif;
+}
+
+.flex-box {
+    display: flex;
+    align-items: flex-start; /* Вирівнює верхні краї елементів */
+    gap: 20px; /* Відступ між текстом і картинкою */
+    margin-bottom: 30px;
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.text-block h3 {
+    margin-left: 15px;  /* Обнуляємо відступи */
+    padding: 0;
+    font-size: 24px;
+}
+
+.text-block p {
+    margin: 5px 0 0 0;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+*{
+  cursor: url('../images/cursor.png'), auto;
+}
+*:hover {
+    cursor: url('../images/cursor2.png'), auto;
+}
+#user-image {
+  cursor: url('../images/cursor.png'), auto;
+}
+
+#user-image:hover {
+  cursor: url('../images/cursor2.png'), auto;
 }
 
 
-
-
+#user-header{
+    color: white;
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
+}

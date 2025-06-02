@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="exit">
+    <p><br></p>
+    <p><br></p>
+    <div class="exit-block">
+        <p>Ви впевнені, що хочете вийти з акаунту?</p>
+        <button id="logout-button" class="btn" style="width:150px">Вийти</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('logout-button').addEventListener('click', function () {
+        // Видалити токени та ім'я користувача з localStorage
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('username');
+
+        // Перенаправлення на головну сторінку
+        window.location.href = '/';
+    });
+</script>
+{% endblock %}

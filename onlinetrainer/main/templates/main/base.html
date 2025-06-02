@@ -7,27 +7,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Онлайн Тренер{% endblock %}</title>
+    <title>{% block title %}Online trainer{% endblock %}</title>
 </head>
 <body>
 
     <!-- Хедер -->
     <header id="main-header">
-        <nav>
-            <label id="logo">Онлайн <br>тренер</label>
-            <a id="ind" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Головна</a>
-            <a id="ab" class="{% if request.resolver_match.url_name == 'about-us' %}active{% endif %}" href="{% url 'about-us' %}">Про нас</a>
-            <a id="cont" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}" href="{% url 'contacts' %}">Контакти</a>
+    <nav>
+        <img id="logo" src="{% static 'images/logo.png' %}" alt="logo">
+        <a id="ind" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Головна</a>
+        <a id="exer" class="{% if request.resolver_match.url_name == 'exercises' %}active{% endif %}" href="{% url 'exercises' %}">Вправи</a>
+        <a id="down" class="{% if request.resolver_match.url_name == 'downloads' %}active{% endif %}" href="{% url 'downloads' %}">Завантажити</a>
+        <a id="ab" class="{% if request.resolver_match.url_name == 'about-us' %}active{% endif %}" href="{% url 'about-us' %}">Про нас</a>
+<!--        <a id="cont" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}" href="{% url 'contacts' %}">Контакти</a>-->
 
-            <div class="user-menu-container">
-            <a href="{% url 'profile' %}"><img id="user-image" src="{% static 'images/user.png' %}" alt="User Image"></a>
-                <div class="user-dropdown">
-        <a href="{% url 'register' %}" class="dropdown-button">Зареєструватись</a>
-        <a href="{% url 'profile' %}" class="dropdown-button">Мій профіль</a>
+
+                    <div class="user-menu-container" style="display: flex; align-items: center; gap: 10px;">
+    <!-- Ім’я користувача -->
+    <div id="user-header" style=" font-size: 14px; color: #ffffff;font-family: 'Play', sans-serif; margin-top: -31px"></div>
+
+    <!-- Клік по аватару відкриває меню -->
+    <div style="position: relative;">
+        <img id="user-image" src="{% static 'images/user.png' %}" alt="User Image">
+
+        <div class="user-dropdown">
+            <a href="{% url 'registration_form' %}" class="dropdown-button">Зареєструватись</a>
+            <a href="{% url 'login' %}" class="dropdown-button">Увійти</a>
+            <a href="{% url 'profile' %}" class="dropdown-button">Мій профіль</a>
+            <a href="{% url 'exit' %}" class="dropdown-button">Вийти</a>
+        </div>
     </div>
 </div>
-        </nav>
-    </header>
+
+    </nav>
+</header>
 
     <!-- Основний контент -->
     <main>
@@ -37,47 +50,38 @@
 
     <!-- Футер -->
     <footer>
-        <p>© 2025 Онлайн Тренер</p>
+        <p style="margin-left: 20px">© 2025 Онлайн Тренер</p>
     </footer>
 
+    <!-- JavaScript -->
+    <script>
+        // Отримуємо елементи
+        const userImage = document.getElementById('user-image');
+        const userDropdown = document.querySelector('.user-dropdown');
+
+        // Функція для відкриття або закриття меню
+        function toggleDropdown() {
+            userDropdown.classList.toggle('show');
+        }
+
+        // Додаємо обробник події для натискання на картинку
+        userImage.addEventListener('click', toggleDropdown);
+
+        // Закриваємо меню, якщо користувач натискає поза меню
+        document.addEventListener('click', function(event) {
+            if (!userImage.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.remove('show');
+            }
+        });
+
+        const username = localStorage.getItem('username');
+        if (username) {
+            document.getElementById('user-header').innerText = username;
+        }
+    </script>
 </body>
 </html>
 
 
-<style>
-    .user-menu-container {
-    position: relative;
-    display: inline-block;
-
-}
-
-.user-dropdown {
-    position: absolute;
-    top: -100%;
-   align-items: flex-end;
-    background-color: #21212d;
-    border-top: none;
-    border-radius: 4px;
-    z-index: 10;
-    display: none;
-    min-width: 120px;
-    padding: 5px 0;
-
-}
-
-.user-menu-container:hover .user-dropdown {
-    display: block;
-}
-
-.dropdown-button {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    text-align: left;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-    color: #ffffff;
-}
 
 
-</style>

@@ -1,0 +1,119 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="exercises">
+  <p><br></p>
+  <h2>Каталог вправ</h2>
+
+  <div class="content3 flex-box">
+    <div class="text-block">
+      <br>
+      <h3>Підйом гантелей на біцепс</h3>
+      <br>
+      <p>
+  Ефективна вправа для збільшення сили рук.<br>
+  Виконується стоячи, з плавним підняттям гантелей<br>
+  до плечей із фіксованими ліктями та рівною спиною.
+</p>
+
+    </div>
+    <a href="{% url 'ex1' %}">
+      <img id="vid1" src="{% static 'images/vid1.png' %}" class="preview-img">
+    </a>
+  </div>
+
+  <div class="content4 flex-box">
+    <div class="text-block">
+      <br>
+      <h3>Присідання зі штангою</h3>
+      <br>
+      <p>
+        Базова вправа для зміцнення ніг, сідниць і кора. <br>
+        Виконується стоячи зі штангою на плечах: <br>
+        опускайся вниз до рівня стегон, тримаючи спину рівною,<br>
+        а потім повернись у вихідне положення.
+      </p>
+    </div>
+    <a href="{% url 'ex2' %}">
+      <img id="vid2" src="{% static 'images/vid2.png' %}" class="preview-img">
+    </a>
+  </div>
+
+  <div class="content5 flex-box">
+    <div class="text-block">
+      <br>
+      <h3>Віджимання</h3>
+      <br>
+      <p>
+        Класична вправа для зміцнення грудних м’язів, <br>
+        трицепсів і плечей. <br>
+        Виконується з положення «планка»: опускайте <br>
+        тіло до підлоги, згинаючи руки в ліктях,<br>
+        а потім піднімайся назад у вихідне положення.
+      </p>
+    </div>
+    <a href="{% url 'ex3' %}">
+      <img id="vid3" src="{% static 'images/vid3.png' %}" class="preview-img">
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+<!--<div class="carousel">-->
+<!--  <div class="carousel-item">-->
+<!--    <video src="{% static 'videos/video1.mp4' %}" class="d-block" controls>-->
+<!--      Ваш браузер не підтримує відео.-->
+<!--    </video>-->
+<!--    <div class="carousel-caption">-->
+<!--      <h3>Перша вправа</h3>-->
+<!--      <p>Опис вправи</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="carousel-item">-->
+<!--    <video src="{% static 'videos/video2.mp4' %}" class="d-block" controls>-->
+<!--      Ваш браузер не підтримує відео.-->
+<!--    </video>-->
+<!--    <div class="carousel-caption">-->
+<!--      <h3>Друга вправа</h3>-->
+<!--      <p>Опис вправи</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="carousel-item">-->
+<!--    <video src="{% static 'videos/video3.mp4' %}" class="d-block" controls>-->
+<!--      Ваш браузер не підтримує відео.-->
+<!--    </video>-->
+<!--    <div class="carousel-caption">-->
+<!--      <h3>Третя вправа</h3>-->
+<!--      <p>Опис вправи</p>-->
+<!--    </div>-->
+<!--  </div>-->
+
+
+<!--  <div class="prev"></div>-->
+<!--  <div class="next"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--    <script>-->
+<!--  const items = document.querySelectorAll('.carousel-item');-->
+<!--  let currentIndex = 0;-->
+
+<!--  function showItem(index) {-->
+<!--    items.forEach((item, i) => {-->
+<!--      item.style.display = i === index ? 'block' : 'none';-->
+<!--    });-->
+<!--  }-->
+
+<!--  document.querySelector('.prev').addEventListener('click', () => {-->
+<!--    currentIndex = (currentIndex - 1 + items.length) % items.length;-->
+<!--    showItem(currentIndex);-->
+<!--  });-->
+
+<!--  document.querySelector('.next').addEventListener('click', () => {-->
+<!--    currentIndex = (currentIndex + 1) % items.length;-->
+<!--    showItem(currentIndex);-->
+<!--  });-->
+
+<!--  showItem(currentIndex);-->
+<!--    </script>-->
+
