@@ -3,21 +3,110 @@
 
 {% block content %}
 
-
 <div class="profile">
-
     <div class="profile-block">
-        <p><br></p>
-        <p><br></p>
-        <p>Вхід користувача</p>
 
-        <div class="profile-actions">
-            <a href="{% url 'registration_form' %}" class="btn">Зареєструватися</a>
+        <h2>Профіль користувача</h2>
+        <br>
+        <br>
+        <p>Ім'я користувача: <span id="user-name"></span></p>
+        <p>Email: <span id="user-email"></span></p>
+        <br>
+        <br>
 
-            <a href="{% url 'login' %}" class="btn">Увійти</a>
+        <button id="openGoalsModalBtn" class="btn" style="width:240px">Налаштувати мої цілі</button>
+    </div>
+
+    <div id="goalsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Налаштування цілей</h2>
+            <p style="color: white; font-family: 'Play', sans-serif;">Тут ви зможете налаштовувати свої цілі.</p>
+            <button id="saveGoalsBtn" class="btn">Зберегти цілі</button>
         </div>
-
     </div>
 </div>
+
+<style>
+    /* Стилі для модального вікна */
+    .modal {
+        display: none; /* Приховано за замовчуванням */
+        position: fixed; /* Фіксоване положення на екрані */
+        z-index: 1; /* Щоб було над іншим вмістом */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Дозволяє прокручувати, якщо вміст завеликий */
+        background-color: rgba(0,0,0,0.4); /* Темний фон з прозорістю */
+    }
+
+    .modal-content {
+        background-color: #000000;
+        margin: 15% auto; /* Центрування по вертикалі та горизонталі */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%; /* Можна налаштувати ширину */
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    // JavaScript для відкриття та закриття модального вікна
+    const modal = document.getElementById("goalsModal");
+    const openBtn = document.getElementById("openGoalsModalBtn");
+    const closeBtn = document.querySelector(".close-button");
+    const saveBtn = document.getElementById("saveGoalsBtn"); // Додали обробник для кнопки "Зберегти цілі"
+
+    openBtn.addEventListener("click", () => {
+        modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Тут можна додати JavaScript для обробки натискання кнопки "Зберегти цілі"
+    saveBtn.addEventListener("click", () => {
+        // Логіка для збереження налаштувань цілей
+        alert("Цілі збережено!"); // Тимчасове повідомлення
+        modal.style.display = "none"; // Закриваємо модальне вікно після збереження
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("username");
+    const email = localStorage.getItem("email");
+
+    if (username) {
+        document.getElementById("user-name").innerText = username;
+    }
+
+    if (email) {
+        document.getElementById("user-email").innerText = email;
+    }
+});
+
+</script>
 
 {% endblock %}

@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Підтвердження електронної пошти</title>
+</head>
+<body style="background-color:#c193ea; color:#000;">
+    <div style="background-color:#c193ea; color:#000; padding:20px; border-radius:5px; margin:20px auto; max-width:600px;">
+        <h2>Привіт, {{ username }}!</h2>
+        <h3>Будь ласка, перейдіть за посиланням нижче, щоб активувати свій обліковий запис:</h3>
+        <h3><a href="{{ activation_link }}" style="display:inline-block;  background: linear-gradient(60deg, #f11c73, #7531dc); color:#ffffff; padding:10px 20px; text-decoration:none; border-radius:5px;">Активувати акаунт</a></h3>
+        <p>Якщо ви не реєструвалися на нашому сайті, проігноруйте цей лист.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="suc">
+
+    <div class="suc-block">
+    <h1>Ваш акаунт успішно активовано!</h1>
+    <p>Ви можете увійти за посиланням</p>
+    <a class="suc_a" href="{% url 'login' %}">Увійти в акаунт</a>
+    </div>
+</div>
+
+{% endblock %}

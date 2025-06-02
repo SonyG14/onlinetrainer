@@ -1,0 +1,1061 @@
+Internal Server Error: /activation-success/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 110, in activation_success
+    return render(request, 'main/activation_success.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: main/activation_success.html
+"GET /activation-success/ HTTP/1.1" 500 86664
+Internal Server Error: /exercises/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 51, in exercises
+    return render(request, 'main/exercises.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ex1' not found. 'ex1' is not a valid view function or pattern name.
+"GET /exercises/ HTTP/1.1" 500 166056
+Internal Server Error: /profile
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 125, in profile
+    return render(request, 'profile.html', {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: profile.html
+"GET /profile HTTP/1.1" 500 91724
+Internal Server Error: /profile
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 126, in profile
+    return render(request, 'profile.html', {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: profile.html
+"GET /profile HTTP/1.1" 500 91520
+Internal Server Error: /profile
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 126, in profile
+    return render(request, 'profile.html', {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: profile.html
+"GET /profile HTTP/1.1" 500 91383
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115764
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115769
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115774
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115774
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115779
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115784
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 20, in send_confirmation_email
+    html_message = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 115780
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 93, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 25, in send_confirmation_email
+    html_content = render_to_string("emails/activation_email.html", {
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: emails/activation_email.html
+"POST /api/register/ HTTP/1.1" 500 116138
+Internal Server Error: /ex1/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 56, in ex1
+    return render(request, 'main/ex1.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main/chose1.html' not found. 'main/chose1.html' is not a valid view function or pattern name.
+"GET /ex1/ HTTP/1.1" 500 164152
+Internal Server Error: /ex1/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 56, in ex1
+    return render(request, 'main/ex1.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main/index.html' not found. 'main/index.html' is not a valid view function or pattern name.
+"GET /ex1/ HTTP/1.1" 500 164125
+Internal Server Error: /ex1/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 56, in ex1
+    return render(request, 'main/ex1.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main/index.html' not found. 'main/index.html' is not a valid view function or pattern name.
+"GET /ex1/ HTTP/1.1" 500 164125
+Internal Server Error: /chose1/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 67, in chose1
+    return render(request, 'main/chose1.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'option1' not found. 'option1' is not a valid view function or pattern name.
+"GET /chose1/ HTTP/1.1" 500 162655
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142682
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142712
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142682
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142694
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142689
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142671
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142658
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142665
+Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 64, in forbid_multi_line_headers
+    val.encode("ascii")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-5: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 101, in post
+    send_confirmation_email(user, request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\utils.py", line 26, in send_confirmation_email
+    msg.send(fail_silently=False)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 136, in send_messages
+    sent = self._send(message)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\backends\smtp.py", line 153, in _send
+    message = email_message.message()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 266, in message
+    msg["From"] = self.extra_headers.get("From", self.from_email)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 189, in __setitem__
+    name, val = forbid_multi_line_headers(name, val, self.encoding)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 67, in forbid_multi_line_headers
+    val = ", ".join(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 68, in <genexpr>
+    sanitize_address(addr, encoding) for addr in getaddresses((val,))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\mail\message.py", line 101, in sanitize_address
+    raise ValueError(f'Invalid address "{address}"')
+ValueError: Invalid address "Онлайн"
+"POST /api/register/ HTTP/1.1" 500 142669
+Internal Server Error: /ex1/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 56, in ex1
+    return render(request, 'main/ex1.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+"GET /ex1/ HTTP/1.1" 500 158414
+Internal Server Error: /ex1/
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\onlinetrainer\main\views.py", line 56, in ex1
+    return render(request, 'main/ex1.html')
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\38066\PycharmProjects\pythonProject16\venv\lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static', expected 'endblock'. Did you forget to register or load this tag?
+"GET /ex1/ HTTP/1.1" 500 158277

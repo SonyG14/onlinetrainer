@@ -1,0 +1,165 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="chose">
+<p><br></p>
+<p><br></p>
+
+<p id="instruction" >Яким способом хочете виконувати вправу:</p>
+
+<div class="choice-buttons" id="button-container">
+    <button onclick="showUpload()" class="btn" style="width: 190px">Завантажити відео виконаної вправи</button>
+    <button onclick="showCamera()" class="btn" style="width: 190px">Ввімкнути камеру</button>
+    <div style="position: absolute; top: 55px; left: 30px;">
+        <button onclick="window.history.back()" style="
+            padding: 6px 12px;
+            background-color: #000000;
+            border: none;
+            color: white;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Play', sans-serif;
+        ">
+            ← Назад
+        </button>
+    </div>
+</div>
+
+<!-- Блок завантаження відео -->
+<div id="upload-section" style="display: none; text-align: center; margin-top: 20px;">
+    <label class="custom-file-upload">
+        <input type="file" id="video-upload" accept="video/*" onchange="showFileName(this)">
+        Оберіть відеофайл
+    </label>
+    <p id="file-name" style="margin-top: 10px;"></p>
+
+    <div style="position: absolute; top: 55px; left: 30px;">
+        <button onclick="goBack()" style="
+            padding: 6px 12px;
+            background-color: #000000;
+            border: none;
+            color: white;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Play', sans-serif;
+        ">
+            ← Назад
+        </button>
+    </div>
+</div>
+
+<!-- Блок камери -->
+<div id="camera-section" style="display: none; text-align: center; margin-top: 20px; position: relative;">
+    <video id="camera" width="320" height="240" autoplay></video>
+    <p>Камера увімкнена</p>
+    <div style="position: absolute; top: -55px; left: 30px;">
+        <button onclick="stopCamera(); goBack()" style="
+            padding: 6px 12px;
+            background-color: #000000;
+            border: none;
+            color: white;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Play', sans-serif;
+        " >← Назад</button>
+    </div>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+function showUpload() {
+    document.getElementById("instruction").style.display = "none";
+    document.getElementById("button-container").style.display = "none";
+    document.getElementById("upload-section").style.display = "block";
+}
+
+function showCamera() {
+    document.getElementById("instruction").style.display = "none";
+    document.getElementById("button-container").style.display = "none";
+    document.getElementById("camera-section").style.display = "block";
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            const video = document.getElementById('camera');
+            video.srcObject = stream;
+        })
+        .catch(function(error) {
+            alert("Не вдалося отримати доступ до камери: " + error);
+        });
+}
+
+function goBack() {
+    document.getElementById("instruction").style.display = "block";
+    document.getElementById("button-container").style.display = "flex";
+    document.getElementById("upload-section").style.display = "none";
+    document.getElementById("camera-section").style.display = "none";
+    stopCamera();
+}
+
+function stopCamera() {
+    const video = document.getElementById('camera');
+    const stream = video.srcObject;
+    if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        video.srcObject = null;
+    }
+}
+
+function showFileName(input) {
+    const fileName = input.files[0] ? input.files[0].name : '';
+    document.getElementById('file-name').innerText = fileName;
+}
+</script>
+
+<!-- Вбудований CSS -->
+<style>
+.choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+
+.chose {
+    text-align: center;
+    font-family: 'Play', sans-serif;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+body {
+    background-color: #21212d;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Play', sans-serif;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #000;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+.custom-file-upload:hover {
+    background-color: #333;
+}
+</style>
+
+{% endblock %}

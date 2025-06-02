@@ -1,23 +1,15 @@
 import datetime
+import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-5o-pzt)(p*pgr57p6h^!wy9z2b#0bh$6ylpl#m)8!@9(@r-p^4'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
-# Application definition
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.3.15', '192.168.3.128']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,20 +57,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'onlinetrainer.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -95,56 +79,39 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = '/static/'
-
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.IsAdminUser',
         'rest_framework.permissions.AllowAny',
     ],
     'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-
     ],
-    'DEFAULT_PAGINATION_CLASS':
-        'rest_framework_json_api.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework_json_api.pagination.PageNumberPagination',
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=3),
     'JWT_ALLOW_REFRESH': True,
-    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7)  # default
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7)
 }
 
 DJOSER = {
@@ -156,7 +123,6 @@ DJOSER = {
     'TOKEN_MODEL': None
 }
 
-
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": datetime.timedelta(days=3),
     "REFRESH_TOKEN_LIFETIME": datetime.timedelta(days=7),
@@ -164,9 +130,10 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": False,
     "UPDATE_LAST_LOGIN": False,
 
-    "ALGORITHM": "HS256",
-    "SIGNING_KEY": SECRET_KEY,
-    "VERIFYING_KEY": "",
+    "ALGORITHM": "RS256",  # використання RSA
+    "SIGNING_KEY": Path(BASE_DIR / 'keys' / 'private.pem').read_text(),  # приватний ключ RSA для підпису токенів
+    "VERIFYING_KEY": Path(BASE_DIR / 'keys' / 'public.pem').read_text(),  # публічний ключ RSA для перевірки токенів
+
     "AUDIENCE": None,
     "ISSUER": None,
     "JSON_ENCODER": None,
@@ -196,4 +163,37 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
+
+
+# Встановіть в 'EMAIL_BACKEND' правильний поштовий сервер
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Налаштування для поштового сервера
+EMAIL_HOST = 'smtp.gmail.com'  # Залежно від того, який сервер ви використовуєте
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sonydpa67@gmail.com'  # Ваш email
+EMAIL_HOST_PASSWORD = 'faie atkn cvhi zvkk'  # Ваш пароль або app password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'C:\\Users\\38066\\PycharmProjects\\pythonProject16\\onlinetrainer\\logs\\django.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
+
 
