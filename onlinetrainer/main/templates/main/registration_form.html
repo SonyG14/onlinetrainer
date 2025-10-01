@@ -48,11 +48,9 @@ document.getElementById('register-form').addEventListener('submit', async functi
     if (response.ok) {
         document.getElementById('message').innerText = 'Реєстрація успішна! Перевірте пошту для підтвердження.';
     } else {
-        // Виведення помилок, якщо вони є
         let errorMessage = 'Помилка реєстрації.';
 
         if (data.errors) {
-            // Перевірка наявності помилок і виведення їх на сторінці
             errorMessage = 'Помилка: ' + JSON.stringify(data.errors);
         }
 

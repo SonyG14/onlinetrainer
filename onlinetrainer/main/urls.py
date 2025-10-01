@@ -31,6 +31,7 @@ urlpatterns = [
     path('chose1/', views.chose1, name='chose1'),
     path('chose2/', views.chose2, name='chose2'),
     path('chose3/', views.chose3, name='chose3'),
+    path('responses/', views.responses, name='responses'),
     path('mobile_login', try_mobile_login, name='try_mobile_login'),
     path('upload_raw_YUV_frames', upload_raw_data_YUV_frames, name='upload_raw_package_YUV_frames'),
 

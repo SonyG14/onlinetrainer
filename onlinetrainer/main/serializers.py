@@ -69,11 +69,9 @@ def register(request):
         password = request.POST['password']
 
         user = User.objects.create_user(username=username, email=email, password=password)
-
-        # Відправка листа з підтвердженням
         send_confirmation_email(user, request)
 
-        return redirect('registration_success')  # Страница після успішної реєстрації
+        return redirect('registration_success')
 
     return render(request, 'register.html')
 

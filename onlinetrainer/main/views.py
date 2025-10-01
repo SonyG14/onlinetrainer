@@ -92,6 +92,9 @@ def chose2(request):
 def chose3(request):
     return render(request, 'main/chose3.html')
 
+def responses(request):
+    return render(request, 'main/responses.html')
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = CustomRegisterSerializer

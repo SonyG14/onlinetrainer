@@ -44,7 +44,6 @@ document.getElementById('login-form').addEventListener('submit', async function(
         localStorage.setItem('email', data.email);
         }
 
-        // Перехід на головну або іншу сторінку після входу
         window.location.href = '/';
     } else {
         document.getElementById('message').innerText =
