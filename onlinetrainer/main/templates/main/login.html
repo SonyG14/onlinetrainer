@@ -5,7 +5,15 @@
 <div class="login">
     <div class="log">
         <h2>Вхід</h2>
-        <form id="login-form">
+
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
             <label for="username">Ім'я користувача:</label><br>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -14,41 +22,6 @@
 
             <button type="submit" class="btn">Увійти</button>
         </form>
-        <div id="message"></div>
     </div>
 </div>
-
-<script>
-document.getElementById('login-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    const response = await fetch('/api/token/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password })
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-        localStorage.setItem('access_token', data.access);
-        localStorage.setItem('refresh_token', data.refresh);
-        localStorage.setItem('username', username);
-
-        if (data.email) {
-        localStorage.setItem('email', data.email);
-        }
-
-        window.location.href = '/';
-    } else {
-        document.getElementById('message').innerText =
-            data.detail || 'Невірний логін або пароль.';
-    }
-});
-</script>
 {% endblock %}

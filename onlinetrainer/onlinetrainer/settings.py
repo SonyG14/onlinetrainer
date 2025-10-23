@@ -1,6 +1,10 @@
 import datetime
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,8 +12,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-5o-pzt)(p*pgr57p6h^!wy9z2b#0bh$6ylpl#m)8!@9(@r-p^4'
 
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.3.15', '192.168.3.128']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', '192.168.3.15']
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+    'http://0.0.0.0:8000',
+    'http://192.168.3.15:8000',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,6 +50,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'onlinetrainer.urls'
+AUTH_USER_MODEL = 'main.CustomUser'
 
 TEMPLATES = [
     {
@@ -59,8 +72,12 @@ WSGI_APPLICATION = 'onlinetrainer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'onlinetrainerdb',
+        'USER': 'myuser',
+        'PASSWORD': '140705s',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -107,6 +124,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework_json_api.pagination.PageNumberPagination',
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
+
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=3),
@@ -167,13 +185,14 @@ SIMPLE_JWT = {
 
 # Встановіть в 'EMAIL_BACKEND' правильний поштовий сервер
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+# settings.py для тестування
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Налаштування для поштового сервера
 EMAIL_HOST = 'smtp.gmail.com'  # Залежно від того, який сервер ви використовуєте
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'sonydpa67@gmail.com'  # Ваш email
-EMAIL_HOST_PASSWORD = 'faie atkn cvhi zvkk'  # Ваш пароль або app password
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 LOGGING = {
@@ -195,5 +214,8 @@ LOGGING = {
     },
 }
 
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 

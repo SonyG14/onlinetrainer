@@ -21,7 +21,11 @@ from django.utils.http import urlsafe_base64_decode
 from django.contrib.auth.decorators import login_required
 import numpy as np
 import cv2
-
+from .serializers import CustomRegisterSerializer
+from .models import CustomUser
+from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth.tokens import default_token_generator
+from django.shortcuts import get_object_or_404, redirect
 
 #------- add Sam
 
@@ -56,7 +60,23 @@ def registration_form(request):
     return render(request, 'main/registration_form.html')
 
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as auth_login
+from django.contrib import messages
+
+
 def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            return redirect('index')
+        else:
+            messages.error(request, "Невірний логін або пароль")
+
     return render(request, 'main/login.html')
 
 
@@ -95,10 +115,14 @@ def chose3(request):
 def responses(request):
     return render(request, 'main/responses.html')
 
-class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = CustomRegisterSerializer
-    permission_classes = [AllowAny]
+# class RegisterView(generics.CreateAPIView):
+#     serializer_class = CustomRegisterSerializer
+#
+#     def create(self, request, *args, **kwargs):
+#         serializer = self.get_serializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.save()
+#         return Response({"message": "Реєстрація успішна! Перевірте пошту."}, status=status.HTTP_201_CREATED)
 
 
 class UserInfoView(APIView):
@@ -128,24 +152,45 @@ class RegisterAPIView(APIView):
             return Response({"errors": serializer.errors}, status=400)
 
 
-from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponseBadRequest, HttpResponse
 from django.urls import reverse
+
+
 
 class ActivateUserView(APIView):
     def get(self, request, uidb64, token):
         try:
             uid = urlsafe_base64_decode(uidb64).decode()
-            user = User.objects.get(pk=uid)
-        except (User.DoesNotExist, ValueError, TypeError):
+            user = CustomUser.objects.get(pk=uid)
+        except (CustomUser.DoesNotExist, ValueError, TypeError):
             user = None
 
         if user and default_token_generator.check_token(user, token):
             user.is_active = True
             user.save()
-            # Перенаправлення на сторінку успіху
             return HttpResponseRedirect(reverse('activation_success'))
         else:
             return Response({"message": "Недійсне або прострочене посилання."}, status=status.HTTP_400_BAD_REQUEST)
+
+from django.utils.http import urlsafe_base64_decode
+from django.contrib.auth.tokens import default_token_generator
+from django.shortcuts import get_object_or_404, redirect
+
+
+def activate(request, uidb64, token):
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = CustomUser.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+        user = None
+
+    if user and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        # Переадресація на логін
+        return redirect("login")
+    else:
+        return HttpResponse("Посилання недійсне або вже використане.")
 
 
 def activation_success(request):
@@ -276,3 +321,42 @@ def upload_raw_data_YUV_frames(request):
         return JsonResponse({"status": "accepted"}, status=202)
     except Exception as e:
         return HttpResponseBadRequest(f"Parsing error: {e}")
+
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Review
+from .forms import ReviewForm
+
+def responses(request):
+    reviews = Review.objects.all().order_by('-created_at')
+    return render(request, 'main/responses.html', {'reviews': reviews})
+
+@login_required
+def make_response(request):
+    print("Current user:", request.user)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.save()
+            return redirect('responses')
+    else:
+        form = ReviewForm()
+
+    return render(request, 'main/make_response.html', {'form': form})
+
+from rest_framework.permissions import IsAuthenticated
+
+class MakeResponseAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        form = ReviewForm(request.data)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user  # тут request.user буде взятий з JWT
+            review.save()
+            return Response({'status':'ok'})
+        return Response({'errors':form.errors}, status=400)

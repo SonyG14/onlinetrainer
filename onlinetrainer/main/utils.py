@@ -14,7 +14,7 @@ def send_confirmation_email(user, request):
     current_site = get_current_site(request)
     activation_link = f"http://{current_site.domain}/activate/{uid}/{token}/"
 
-    subject = "Підтвердження електронної пошти"
+    subject = "Підтвердження реєстрації"
     text_content = f"Привіт, {user.username}!\nПерейдіть за посиланням на сайт для активації акаунту:\n{activation_link}"
     html_content = render_to_string(
         'main/activation_email.html',
@@ -25,5 +25,5 @@ def send_confirmation_email(user, request):
     msg.attach_alternative(html_content, "text/html")
     msg.send(fail_silently=False)
 
-    print("=== Лист надіслано (HTML) ===")
+    print("Лист надіслано (HTML)")
 
