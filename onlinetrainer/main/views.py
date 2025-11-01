@@ -112,8 +112,6 @@ def chose2(request):
 def chose3(request):
     return render(request, 'main/chose3.html')
 
-def responses(request):
-    return render(request, 'main/responses.html')
 
 # class RegisterView(generics.CreateAPIView):
 #     serializer_class = CustomRegisterSerializer
@@ -187,7 +185,6 @@ def activate(request, uidb64, token):
     if user and default_token_generator.check_token(user, token):
         user.is_active = True
         user.save()
-        # Переадресація на логін
         return redirect("login")
     else:
         return HttpResponse("Посилання недійсне або вже використане.")

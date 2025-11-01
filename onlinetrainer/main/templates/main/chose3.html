@@ -12,14 +12,13 @@
     <button onclick="showUpload()" class="btn" style="width: 190px">Завантажити відео виконаної вправи</button>
     <button onclick="showCamera()" class="btn" style="width: 190px">Ввімкнути камеру</button>
     <div style="position: absolute; top: 55px; left: 30px;">
-        <button onclick="window.history.back()" style="
+        <button class="button" onclick="window.history.back()" style="
             padding: 6px 12px;
             background-color: #000000;
             border: none;
             color: white;
             font-size: 12px;
             border-radius: 5px;
-            cursor: pointer;
             font-family: 'Play', sans-serif;
         ">
             ← Назад
@@ -36,14 +35,13 @@
     <p id="file-name" style="margin-top: 10px;"></p>
 
     <div style="position: absolute; top: 55px; left: 30px;">
-        <button onclick="goBack()" style="
+        <button class="button" onclick="goBack()" style="
             padding: 6px 12px;
             background-color: #000000;
             border: none;
             color: white;
             font-size: 12px;
             border-radius: 5px;
-            cursor: pointer;
             font-family: 'Play', sans-serif;
         ">
             ← Назад
@@ -56,21 +54,19 @@
     <video id="camera" width="320" height="240" autoplay></video>
     <p>Камера увімкнена</p>
     <div style="position: absolute; top: -55px; left: 30px;">
-        <button onclick="stopCamera(); goBack()" style="
+        <button class="button" onclick="stopCamera(); goBack()" style="
             padding: 6px 12px;
             background-color: #000000;
             border: none;
             color: white;
             font-size: 12px;
             border-radius: 5px;
-            cursor: pointer;
             font-family: 'Play', sans-serif;
         " >← Назад</button>
     </div>
 </div>
 </div>
 
-<!-- JavaScript -->
 <script>
 function showUpload() {
     document.getElementById("instruction").style.display = "none";

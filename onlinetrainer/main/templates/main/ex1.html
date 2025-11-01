@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-<div id="exerciseContent" style="display: none;">
+{% if user.is_authenticated %}
+<div id="exerciseContent">
     <div class="exerc" style="position: relative;">
         <div>
             <p><br></p>
             <p><br></p>
-
             <p>Підйом гантелей на біцепс</p>
             <div style="text-align: center;">
                 <video src="{% static 'videos/video1.mp4' %}" class="d-block" controls></video>
@@ -17,39 +17,22 @@
             </div>
         </div>
         <div style="position: absolute; top: 75px; left: 30px;">
-            <button onclick="window.history.back()" style="padding: 6px 12px; background-color: #000000; border: none; color: white; font-size: 12px; border-radius: 5px; cursor: pointer; font-family: 'Play', sans-serif;">
+            <button class="button" onclick="window.history.back()" style="padding: 6px 12px; background-color: #000000; border: none; color: white; font-size: 12px; border-radius: 5px; font-family: 'Play', sans-serif;">
                 ← Назад
             </button>
         </div>
     </div>
 </div>
-
-<div id="loginPrompt" style="text-align: center; padding: 50px; display: none; background-color: #21212d; height: 400px;">
-    <br>
-    <br>
-    <p style="
-    font-size: 18px;
-    color: white;
-    font-family: 'Play', sans-serif;">
-    Для того щоб виконати вправу,
-    <a href="{% url 'login' %}" style="color: #6617bb; text-decoration: none;">залогінтесь</a>
-    або, якщо ще не зареєстровані,
-    <a href="{% url 'registration_form' %}" style="color: #6617bb; text-decoration: none;">зареєструйтесь</a>.
-</p>
-
+{% else %}
+<div id="loginPrompt" style="text-align: center; padding: 50px; background-color: #21212d; height: 400px;">
+    <p style="font-size: 18px; color: white; font-family: 'Play', sans-serif;">
+        Для того щоб виконати вправу,
+        <a href="{% url 'login' %}" style="color: #6617bb; text-decoration: none;">залогінтесь</a>
+        або, якщо ще не зареєстровані,
+        <a href="{% url 'registration_form' %}" style="color: #6617bb; text-decoration: none;">зареєструйтесь</a>.
+    </p>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const token = localStorage.getItem("access_token");
-
-        if (token) {
-            document.getElementById("exerciseContent").style.display = "block";
-        } else {
-            document.getElementById("loginPrompt").style.display = "block";
-        }
-    });
-</script>
+{% endif %}
 
 
 {% endblock %}

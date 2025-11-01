@@ -1,33 +1,35 @@
 {% extends "main/base.html" %}
 {% block content %}
-<div class="responses">
-<div class="responses-container">
-  <div class="responses-header">
-    <h2>Відгуки користувачів</h2>
 
-    {% if user.is_authenticated %}
-      <a href="{% url 'make_response' %}" class="btn">Додати відгук</a>
+<div class="responses">
+  <p><br></p>
+
+    <div class="responses-header">
+      <h2>Відгуки користувачів</h2>
+
+      {% if user.is_authenticated %}
+        <a href="{% url 'make_response' %}" class="btn">Додати відгук</a>
+      {% endif %}
+    </div>
+
+
+  <div class="responses-container">
+    {% for review in reviews %}
+      <div class="card review-card">
+        <div class="card-body">
+          <small class="review-meta">
+            Автор: {{ review.user.username }} | {{ review.created_at|date:"d.m.Y H:i" }}
+          </small>
+          <p class="review-text">{{ review.text }}</p>
+        </div>
+      </div>
+    {% empty %}
+      <p>Ще немає відгуків.</p>
+    {% endfor %}
+
+    {% if not user.is_authenticated %}
+      <p class="login-prompt">Щоб залишити відгук, <a href="{% url 'login' %}">авторизуйтесь</a>.</p>
     {% endif %}
   </div>
-
-  <hr>
-
-  {% for review in reviews %}
-    <div class="card">
-      <div class="card-body">
-        <p class="review-text">{{ review.text }}</p>
-      <small class="text-muted">
-        Автор: {{ review.user.username }} | {{ review.created_at|date:"d.m.Y H:i" }}
-      </small>
-      </div>
-    </div>
-  {% empty %}
-    <p>Ще немає відгуків.</p>
-  {% endfor %}
-
-  {% if not user.is_authenticated %}
-    <p class="login-prompt">Щоб залишити відгук, <a href="{% url 'login' %}">авторизуйтесь</a>.</p>
-  {% endif %}
-</div>
 </div>
 {% endblock %}

@@ -8,40 +8,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Online trainer{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
 
     <!-- Хедер -->
     <header id="main-header">
-    <nav>
-        <a href="{% url 'about-us' %}"><img id="logo" src="{% static 'images/logo.png' %}" alt="logo"></a>
-        <a id="ind" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Головна</a>
-        <a id="exer" class="{% if request.resolver_match.url_name == 'exercises' %}active{% endif %}" href="{% url 'exercises' %}">Вправи</a>
-        <a id="down" class="{% if request.resolver_match.url_name == 'downloads' %}active{% endif %}" href="{% url 'downloads' %}">Завантажити</a>
-<!--        <a id="ab" class="{% if request.resolver_match.url_name == 'about-us' %}active{% endif %}" href="{% url 'about-us' %}">Про нас</a>-->
-        <a id="respon" class="{% if request.resolver_match.url_name == 'responses' %}active{% endif %}" href="{% url 'responses' %}">Відгуки</a>
-<!--        <a id="cont" class="{% if request.resolver_match.url_name == 'contacts' %}active{% endif %}" href="{% url 'contacts' %}">Контакти</a>-->
+        <nav>
+            <a href="{% url 'about-us' %}" id="logo-link">
+                <img id="logo" src="{% static 'images/logo.png' %}" alt="logo">
+            </a>
 
+            <a id="ind" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}">Головна</a>
+            <a id="exer" class="{% if request.resolver_match.url_name == 'exercises' %}active{% endif %}" href="{% url 'exercises' %}">Вправи</a>
+            <a id="down" class="{% if request.resolver_match.url_name == 'downloads' %}active{% endif %}" href="{% url 'downloads' %}">Завантажити</a>
+            <a id="respon" class="{% if request.resolver_match.url_name == 'responses' %}active{% endif %}" href="{% url 'responses' %}">Відгуки</a>
 
-                    <div class="user-menu-container" style="display: flex; align-items: center; gap: 10px;">
-    <!-- Ім’я користувача -->
-    <div id="user-header" style=" font-size: 14px; color: #ffffff;font-family: 'Play', sans-serif; margin-top: -31px"></div>
+            <div class="user-menu-container" style="display: flex; align-items: center; gap: 10px;">
+                <!-- Ім’я користувача -->
+                <div id="user-header" style="font-size: 14px; color: #ffffff; font-family: 'Play', sans-serif; margin-top: -31px">
+                    {% if user.is_authenticated %}
+                        {{ user.username }}
+                    {% endif %}
+                </div>
 
-    <!-- Клік по аватару відкриває меню -->
-    <div style="position: relative;">
-        <img id="user-image" src="{% static 'images/user.png' %}" alt="User Image">
+                <!-- Меню користувача -->
+                <div style="position: relative;">
+                    <img id="user-image" src="{% static 'images/user.png' %}" alt="User Image">
 
-        <div class="user-dropdown">
-            <a href="{% url 'registration_form' %}" class="dropdown-button">Зареєструватись</a>
-            <a href="{% url 'login' %}" class="dropdown-button">Увійти</a>
-            <a href="{% url 'profile' %}" class="dropdown-button">Мій профіль</a>
-            <a href="{% url 'exit' %}" class="dropdown-button">Вийти</a>
-        </div>
-    </div>
-</div>
-
-    </nav>
-</header>
+                    <div class="user-dropdown">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'profile' %}" class="dropdown-button">Мій профіль</a>
+                            <a href="{% url 'exit' %}" class="dropdown-button">Вийти</a>
+                        {% else %}
+                            <a href="{% url 'registration_form' %}" class="dropdown-button">Зареєструватись</a>
+                            <a href="{% url 'login' %}" class="dropdown-button">Увійти</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Основний контент -->
     <main>
@@ -56,33 +63,29 @@
 
     <!-- JavaScript -->
     <script>
-        // Отримуємо елементи
         const userImage = document.getElementById('user-image');
         const userDropdown = document.querySelector('.user-dropdown');
 
-        // Функція для відкриття або закриття меню
-        function toggleDropdown() {
+        // Відкриття/закриття меню користувача
+        userImage.addEventListener('click', () => {
             userDropdown.classList.toggle('show');
-        }
+        });
 
-        // Додаємо обробник події для натискання на картинку
-        userImage.addEventListener('click', toggleDropdown);
-
-        // Закриваємо меню, якщо користувач натискає поза меню
-        document.addEventListener('click', function(event) {
+        // Закриття при натисканні поза меню
+        document.addEventListener('click', (event) => {
             if (!userImage.contains(event.target) && !userDropdown.contains(event.target)) {
                 userDropdown.classList.remove('show');
             }
         });
 
-        const username = localStorage.getItem('username');
-        if (username) {
-            document.getElementById('user-header').innerText = username;
-        }
+        // Повернення назад із сторінки "Про нас"
+        const logoLink = document.getElementById('logo-link');
+        logoLink.addEventListener('click', function(event) {
+            if (window.location.pathname === "{% url 'about-us' %}") {
+                event.preventDefault();
+                window.history.back();
+            }
+        });
     </script>
 </body>
 </html>
-
-
-
-
