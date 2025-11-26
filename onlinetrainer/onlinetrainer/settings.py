@@ -202,7 +202,7 @@ LOGGING = {
         'file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': 'C:\\Users\\38066\\PycharmProjects\\pythonProject16\\onlinetrainer\\logs\\django.log',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
         },
     },
     'loggers': {

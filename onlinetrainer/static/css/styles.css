@@ -335,6 +335,7 @@ header {
     height: 330px;
     margin-top: 60px;
     margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 h2 {
@@ -418,6 +419,7 @@ button {
     height: 290px;
     margin-top: 50px;
     margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .register-block p {
@@ -539,6 +541,7 @@ button {
         height: 120px;
         margin-top: 70px;
         margin-bottom: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .exit {
@@ -878,4 +881,42 @@ button {
 .back-btn:hover {
     background: #e0e0e0;
 }
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #b977ff;
+}
+
+.exercise-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 18px rgba(130, 60, 255, 0.6);
+}
+
+.modal-content {
+    animation: scaleIn 0.2s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.user-dropdown {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: 0.25s ease;
+}
+
+.user-dropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
 

@@ -3,20 +3,22 @@
 {% block content %}
 <div class="profile">
     <div class="profile-block">
-
-        <h2>Профіль користувача</h2>
-        <br><br>
-        <p>Ім'я користувача: {{ user.username }}</p>
-        <p>Email: {{ user.email }}</p>
+        <h2 style="margin-top: -30px;">Профіль користувача</h2>
+        <br><br><br><br>
+        <p style="text-align: left; margin-left: -34px;">Ім'я користувача: {{ user.username }}</p>
+        <p style="text-align: left; margin-left: 20px;">Email: {{ user.email }}</p>
         <br><br>
 
         <button id="openGoalsModalBtn" class="btn" style="width:240px">Налаштувати мої цілі</button>
+        <br>
+        <button id="openReviewsModalBtn" class="btn" style="width:240px">Мої відгуки</button>
+    </div>
     </div>
 
     <div id="goalsModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>Налаштування цілей</h2>
+            <h2 style="margin-top: -10px;">Налаштування цілей</h2>
             <p style="color: white; font-family: 'Play', sans-serif;">
                 Тут ви зможете налаштовувати свої цілі.
             </p>
@@ -25,27 +27,51 @@
     </div>
 </div>
 
+<div id="reviewsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button close-reviews">&times;</span>
+            <h2 style="margin-top: -10px;">Відгуки</h2>
+
+        {% if user.review_set.exists %}
+            <ul style="list-style: none; padding-left: 0;">
+                {% for review in user.review_set.all %}
+                    <li style="margin-bottom: 12px; color: white;">
+                        {{ review.text }}<br>
+                        <small style="color: white;">Опубліковано: {{ review.created_at|date:"d.m.Y H:i" }}</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p style="color: white;">Немає відгуків</p>
+        {% endif %}
+
+        </div>
+    </div>
+</div>
+
 <style>
     .modal {
         display: none;
         position: fixed;
-        z-index: 1;
+        z-index: 10;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgb(0,0,0);
     }
 
     .modal-content {
         background-color: #000000;
-        margin: 15% auto;
+        margin: 10% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 40%;
+        width: 50%;
         border-radius: 5px;
         position: relative;
+        color: white;
+        font-family: 'Play', sans-serif;
     }
 
     .close-button {
@@ -53,38 +79,65 @@
         float: right;
         font-size: 28px;
         font-weight: bold;
+        cursor: pointer;
     }
 
-    .close-button:hover,
-    .close-button:focus {
-        color: black;
-        text-decoration: none;
+    .close-button:hover {
+        color: #fff;
+    }
+
+    .profile-block {
+        text-align: center;
+        font-family: 'Play', sans-serif;
+        color: white;
+        background-color: #000000;
+        border-radius: 10px;
+        padding: 40px;
+        width: 500px;
+        height:340px;
+        margin: 60px auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .btn {
+        background-color: #6617bb;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Play', sans-serif;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #5511a0;
     }
 </style>
-
 <script>
-    const modal = document.getElementById("goalsModal");
-    const openBtn = document.getElementById("openGoalsModalBtn");
-    const closeBtn = document.querySelector(".close-button");
-    const saveBtn = document.getElementById("saveGoalsBtn");
+    const goalsModal = document.getElementById("goalsModal");
+    const openGoalsBtn = document.getElementById("openGoalsModalBtn");
+    const saveGoalsBtn = document.getElementById("saveGoalsBtn");
+    const closeGoalsBtn = document.querySelector(".close-button");
 
-    openBtn.addEventListener("click", () => {
-        modal.style.display = "block";
+    const reviewsModal = document.getElementById("reviewsModal");
+    const openReviewsBtn = document.getElementById("openReviewsModalBtn");
+    const closeReviewsBtn = document.querySelector(".close-reviews");
+
+    openGoalsBtn.addEventListener("click", () => goalsModal.style.display = "block");
+    openReviewsBtn.addEventListener("click", () => reviewsModal.style.display = "block");
+
+    closeGoalsBtn.addEventListener("click", () => goalsModal.style.display = "none");
+    closeReviewsBtn.addEventListener("click", () => reviewsModal.style.display = "none");
+
+    window.addEventListener("click", (e) => {
+        if (e.target === goalsModal) goalsModal.style.display = "none";
+        if (e.target === reviewsModal) reviewsModal.style.display = "none";
     });
 
-    closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (event) => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
-
-    saveBtn.addEventListener("click", () => {
+    saveGoalsBtn.addEventListener("click", () => {
         alert("Цілі збережено!");
-        modal.style.display = "none";
+        goalsModal.style.display = "none";
     });
 </script>
 {% endblock %}
